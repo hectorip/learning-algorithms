@@ -22,7 +22,6 @@ def mergeSort(a):
     l = len(a)
 
 
-
 def mergeEasy(a, b):
     return sorted(a + b)
 
