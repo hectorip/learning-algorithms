@@ -59,4 +59,3 @@ traverse_all_subsets(input)
 
 def search_average(a):
     a = sorted(a)
-
