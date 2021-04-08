@@ -1,4 +1,4 @@
-class Stack():
+class Stack:
     def __init__(self, initial_array=[]):
         if initial_array:
             self._stack = initial_array[:]
@@ -33,8 +33,6 @@ t = "12345"
 t = "0162345"
 e = "5432610"
 
-
-
 s = Stack()
 for el in t:
     s.push(int(el))
@@ -53,4 +51,3 @@ if r == e:
     print("Success")
 else:
     print("File")
-

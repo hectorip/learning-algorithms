@@ -16,4 +16,3 @@ for el in lista:
     repetidos.add(el)
 
 print(repetidos)
-
