@@ -1,5 +1,6 @@
 # Algorithms in Python
 
-Aprendiendo algunos algoritmos e implementándolos en Python.
+Aprendiendo algunos algoritmos y su implementación en Python.
 
-Se hacen también algunos ejercicios de plataformas populares de problemas para devs como Leetcode, Hackerank, Codewars, etc.
+Se hacen también algunos ejercicios de plataformas populares de problemas para
+desarrolladores como Leetcode, Hackerank, Codewars, etc.
