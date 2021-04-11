@@ -14,4 +14,8 @@ desarrolladores como:
 
 ## Libros
 
-Aquí algunos de los libros que creo que servirán de consulta
+Aquí algunos de los libros que creo que servirán de consulta:
+
+- [Introduction to Algorithms de  Thomas H. Cormen](https://www.goodreads.com/book/show/6752187-introduction-to-algorithms)
+- [The Algorithms Design Manual de Steven Skiena](https://www.algorist.com/)
+- [Grokking Algorithms de  Aditya Y. Bhargava](https://www.goodreads.com/book/show/22847284-grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curio)
