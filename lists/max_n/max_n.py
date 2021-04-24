@@ -24,11 +24,16 @@ def max_n(numbers, n):
     return result
 
 
+def find_largest(file, n):
+    nums = [int(x) for x in file]
+    print(max_n(nums, n))
+
+
 # Create a new file with line-separated numbers
-# with open('numbers.txt', 'w') as file:
-#   for n in range(0, 1000):
-#     print(str(n), file=file)
+# with open("numbers.txt", "w") as file:
+#     for n in range(0, 1000000):
+#         print(str(n), file=file)
 
 # # Find the largest numbers in the file
-# with open('numbers.txt') as file:
-#   find_largest(file, 2)  # => [998, 999]
+with open("numbers.txt") as file:
+    find_largest(file, 2)  # => [998, 999]
