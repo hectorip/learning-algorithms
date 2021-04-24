@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/home/hectorip/anaconda3/envs/algos/bin/python3.9",
+    "python.formatting.provider": "black"
+}
