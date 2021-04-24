@@ -34,6 +34,6 @@ def find_largest(file, n):
 #     for n in range(0, 1000000):
 #         print(str(n), file=file)
 
-# # Find the largest numbers in the file
+# Find the largest numbers in the file
 with open("numbers.txt") as file:
     find_largest(file, 2)  # => [998, 999]
