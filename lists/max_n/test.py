@@ -1,5 +1,5 @@
 import pytest
-from max_n import max_n
+from max_n import max_n_optimal
 
 
 @pytest.mark.parametrize(
@@ -12,4 +12,4 @@ from max_n import max_n
     ],
 )
 def test_max_n(test_input, expected):
-    assert max_n(*test_input) == expected
+    assert max_n_optimal(*test_input) == expected

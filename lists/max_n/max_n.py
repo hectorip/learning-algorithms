@@ -4,6 +4,9 @@ https://www.tryexponent.com/courses/data-structures/largest-numbers
 Let's say we have a long list of unsorted numbers (potentially millions), and we want to find the M largest numbers contained in it. 
 Implement a function find_largest(input, m) that will find and return the largest m values given an input array or file.
 """
+from os import stat
+import time
+from heapq import heappop, heappush
 
 
 def max_n(numbers, n):
@@ -24,16 +27,31 @@ def max_n(numbers, n):
     return result
 
 
+def max_n_optimal(numbers, n):
+    result = [float("-inf")]
+    total = 1
+    for num in numbers:
+        if num > result[0]:
+            if total >= n:
+                heappop(result)
+            total += 1
+            heappush(result, num)
+
+    return result
+
+
 def find_largest(file, n):
     nums = [int(x) for x in file]
-    print(max_n(nums, n))
+    start_time = time.time()
+    print("Starting", start_time)
+    print(max_n_optimal(nums, n))
+    end_time = time.time()
+    print("End", end_time)
+    print("Diff: ", end_time - start_time)
 
-
-# Create a new file with line-separated numbers
-# with open("numbers.txt", "w") as file:
-#     for n in range(0, 1000000):
-#         print(str(n), file=file)
 
 # Find the largest numbers in the file
-with open("numbers.txt") as file:
-    find_largest(file, 2)  # => [998, 999]
+
+if __name__ == "__main__":
+    with open("numbers.txt") as file:
+        find_largest(file, 100)  # => [998, 999]
