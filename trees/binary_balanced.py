@@ -11,26 +11,29 @@ class Tree:
 
     def add(self, value):
         if self.value > value:
-            if self._left is not None:
+            if self._left:
                 self._left.add(value)
             else:
-                self.left = Tree(value)
+                self._left = Tree(value)
         elif self.value < value:
-            if self._right is not None:
+            if self._right:
                 self._right.add(value)
             else:
                 self._right = Tree(value)
+
         # Balance Tree
         # Investigate if it is unbalanced
         # Balance
 
     def print(self, level=0):
-        print(self.value)
-        if self._left is not None:
-            print("|")
-            self._left.print()
+        lines = []
+        pass
 
 
-values =  [3, 2, 1]
+values = [3, 2, 1, 4]
 
-for v in values:
+t = Tree(values[0])
+for v in values[1:]:
+    t.add(v)
+
+t.print()
