@@ -21,3 +21,7 @@ Aquí algunos de los libros que creo que servirán de consulta:
 - [Grokking Algorithms de  Aditya Y. Bhargava](https://www.goodreads.com/book/show/22847284-grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curio)
 - [A Common-Sense Guide to Data Structures and Algorithms](https://www.goodreads.com/book/show/34695800-a-common-sense-guide-to-data-structures-and-algorithms)
 
+
+## Cursos
+
+Aquí iran unos cursos.
