@@ -25,4 +25,4 @@ Aquí algunos de los libros que creo que servirán de consulta:
 
 - [Clases de Steven Skiena](https://www3.cs.stonybrook.edu/~algorith/video-lectures/)
 - [Algorithms, part I](https://www.coursera.org/learn/algorithms-part1)
--
+- [Algorithms, design and analysis de Stanford](https://www.edx.org/course/algorithms-design-and-analysis)
