@@ -17,5 +17,5 @@ def all_subsets(arr):
 
 
 if __name__ == "__main__":
-    example = list(range(100))
+    example = list(range(10))
     print(all_subsets(example))
