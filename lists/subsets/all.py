@@ -1,4 +1,5 @@
 # Finding all subsets in an array
+# Complexity O(n^2)
 
 
 def all_subsets(arr):
@@ -12,7 +13,6 @@ def all_subsets(arr):
         ns.append(el)
         new_subsets.append(ns)
     r = prev_subsets + new_subsets
-    # breakpoint()
     return r
 
 
