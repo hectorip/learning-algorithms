@@ -1,25 +1,21 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
+    @classmethod
+    def build(cls, array):
+        if not array:
+            return None
 
-class ListNode():
-	def __init__(self, val=0, next=None):
-		self.val = val
-		self.next = next
+        return cls(array[0], cls.build(array[1:]))
 
-	@classmethod
-	def build(cls, array):
-		if not array:
-			return None
+    def print(self):
+        values = [self.val]
+        next_ = self.next
 
-		return cls(array[0], cls.build(array[1:]))
+        while next_:
+            values.append(next_.value)
+            next_ = next_.next
 
-	def print(self):
-		values = [self.val]
-		next_ = self.next
-
-		while next_:
-			values.append(next_.value)
-			next_ = next_.next
-
-		print("->".join(values))
-
-
+        print("->".join(values))
