@@ -10,6 +10,7 @@ from roman_numerals import transform
         ("CDXLIV", 444),
         ("CCC", 300),
         ("LXIV", 64),
+        ("LXXX", 80),
     ],
 )
 def test_numeral_transform(test_input, expected):

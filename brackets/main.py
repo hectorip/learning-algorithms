@@ -15,15 +15,15 @@ def check(s):
         "}": "{",
         ")": "(",
     }
-    closers = pairs.keys()
     for c in s:
-        if c in closers:
-            opener = pairs[c]
+        opener = pairs.get(c, None)
+        if opener:
             try:
                 removed = stack.pop()
                 if removed != opener:
                     return False
-            except:
+            except Exception:
+                # This fails when stack is empty, meaning we have a closing char without an opener char
                 return False
         else:
             stack.append(c)
