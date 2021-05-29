@@ -9,7 +9,7 @@ def remove_by_val(head, val):
         head = head.next
 
     cursor = head
-    while cursor.next:
+    while cursor and cursor.next:
         # Hold current node to remove next if it has the value
         if cursor.next.val == val:
             cursor.next = cursor.next.next
