@@ -4,6 +4,6 @@ def hasCycle(head):
         fast = fast.next
         if fast == slow:
             return True
+        slow = slow.next
 
         fast = fast.next
-    return False
