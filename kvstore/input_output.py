@@ -1,5 +1,4 @@
 # Ejercicio: https://jojozhuang.github.io/algorithm/problem-versioned-key-value-store
-#
 
 class KVStore():
     def __init__(self):
@@ -31,8 +30,6 @@ class KVStore():
         return value
     def print(self):
         print(self._store)
-
-
 
 # {
 #     "K": [
