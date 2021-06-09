@@ -1,3 +1,6 @@
+"""
+Sum all the nodes between the left and right values inclusive
+"""
 
 def range_sum(root, left, right):
     result = 0
