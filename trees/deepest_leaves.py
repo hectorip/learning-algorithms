@@ -1,16 +1,16 @@
-    def deepestLeavesSum(self, root: TreeNode) -> int:
-        levels = [[root]]
-        deepest = 0
-        nodes = levels[deepest][:]
-        while nodes:
-            node = nodes.pop()
-            if node.left or node.right:
-                if len(levels) - 1 == deepest:
-                    levels.append([])
-                    deepest += 1
-                node.left and levels[deepest].append(node.left)
-                node.right and levels[deepest].append(node.right)
-            if not nodes and len(levels) - 1 == deepest:
-                nodes = levels[deepest][:]
-                
-        return sum([x.val for x in levels[-1]])
+def deepestLeavesSum(root: TreeNode) -> int:
+    next_level = []
+    nodes = [root]
+    last_sum = 0
+    while nodes:
+        node = nodes.pop()
+        last_sum += node.val
+        node.left and next_level.append(node.left)
+        node.right and next_level.append(node.right)
+        if not nodes:
+            if next_level:
+                nodes = next_level
+                last_sum = 0
+                next_level = []
+            else:
+                return last_sum
