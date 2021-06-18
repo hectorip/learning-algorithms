@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/home/hectorip/anaconda3/envs/algos/bin/python",
+    "python.pythonPath": "/Users/hectorip/opt/anaconda3/envs/video/bin/python",
     "python.formatting.provider": "black"
 }
