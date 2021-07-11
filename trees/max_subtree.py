@@ -9,7 +9,7 @@ def constructMaximumBinaryTree(nums: List[int]):
     m = max(nums)
     mi = nums.index(m)
     left = nums[:mi]
-    right = nums[mi + 1 :]
+    right = nums[(mi + 1) :]
     return TreeNode(
         val=m,
         left=constructMaximumBinaryTree(left),
