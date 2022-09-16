@@ -16,11 +16,11 @@ def check(s):
         ")": "(",
     }
     for c in s:
-        opener = pairs.get(c, None)
-        if opener:
+        closer = pairs.get(c, None)
+        if closer:
             try:
                 removed = stack.pop()
-                if removed != opener:
+                if removed != closer:
                     return False
             except Exception:
                 # This fails when stack is empty, meaning we have a closing char without an opener char
