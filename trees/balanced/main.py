@@ -1,3 +1,7 @@
+# Un árbol binario está balanceado
+# si la diferencia de altura entre sus subárboles izquierdo y derecho
+# es a lo más 1. para cada nodo del árbol
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
