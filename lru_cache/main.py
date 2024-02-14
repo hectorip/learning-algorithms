@@ -69,4 +69,3 @@ class LRU:
             return node.value
         else:
             return -1
-
