@@ -15,7 +15,7 @@ class Deque:
         
         if not self.head:
             self.head = node
-            self.head = node
+            self.tail = node
             return
 
         self.head.prev = node
@@ -26,46 +26,59 @@ class Deque:
         if self.head is node:
             return
         node.prev.next = node.next
-        node.next.prev = node.prev
+        if node.next:  # Si no es el último
+            node.next.prev = node.prev
+        if not node.next:
+            self.tail = node.prev
         node.prev = None
         self.push_front(node)
 
     def pop_back(self):
         if not self.tail:
             return None
+        if self.tail == self.head:
+            node = self.head
+            self.tail = None
+            self.head = None
+            return node
         tail = self.tail
         self.tail = tail.prev
+        self.tail.next = None
         return tail
 
-class LRU:
+
+class LRUCache:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.cache = Dict()
+        self.cache = dict()
         self.queue = Deque()
+        self.len = 0
 
     def put(self, key, value):
         node = self.cache.get(key)
         if node is not None:
             node.value = value
-            self.cache[key] = node
+            # self.cache[key] = node
             self.queue.move_front(node)
             return 
-
-        if len(self.cache) >= self.capacity:
+        if self.len >= self.capacity:
             # Drop
             node_to_drop = self.queue.pop_back()
+            if not node_to_drop:
+                return
             del(self.cache[node_to_drop.key])
-            self.capacity -= 1
+            self.len -= 1
 
+        self.len += 1
         node = Node(key, value)
         self.cache[key] = node
-        self.capacity += 1
         self.queue.push_front(node)
 
     def get(self, key):
         node = self.cache.get(key)
         if node:
-            self.move_front(node)
+            self.queue.move_front(node)
             return node.value
         else:
             return -1
+
