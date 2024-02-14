@@ -12,7 +12,6 @@ class Deque:
         self.tail = None
 
     def push_front(self, node):
-        
         if not self.head:
             self.head = node
             self.tail = node
@@ -23,25 +22,31 @@ class Deque:
         self.head = node
 
     def move_front(self, node):
+        # Si el noddo ya está al frente, no hacemos nada
         if self.head is node:
             return
+
         node.prev.next = node.next
         if node.next:  # Si no es el último
             node.next.prev = node.prev
-        if not node.next:
+        else:
+            # Si el nodo es el último, también tenemos que actuliazar la cola
             self.tail = node.prev
+
         node.prev = None
         self.push_front(node)
 
     def pop_back(self):
+        """Quita el último nodo de la lista (la cola) y devuelve su valor"""
         if not self.tail:
             return None
-        if self.tail == self.head:
-            node = self.head
-            self.tail = None
-            self.head = None
-            return node
         tail = self.tail
+        # Si solo tenemos un nodo, tenemos que actualizar la cabeza y la cola
+        if tail is self.head:
+            self.head = None
+            self.tail = None
+            return tail
+
         self.tail = tail.prev
         self.tail.next = None
         return tail
@@ -56,11 +61,13 @@ class LRUCache:
 
     def put(self, key, value):
         node = self.cache.get(key)
+        # Si ya existe la llave, actualizamod el valor y lo movemos al frente
         if node is not None:
             node.value = value
-            # self.cache[key] = node
             self.queue.move_front(node)
             return 
+        
+        # Si ya está lleno el caché tenemos que borrar el último nodo
         if self.len >= self.capacity:
             # Drop
             node_to_drop = self.queue.pop_back()
