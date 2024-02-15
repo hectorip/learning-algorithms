@@ -66,10 +66,8 @@ class LRUCache:
             node.value = value
             self.queue.move_front(node)
             return 
-        
         # Si ya está lleno el caché tenemos que borrar el último nodo
         if self.len >= self.capacity:
-            # Drop
             node_to_drop = self.queue.pop_back()
             if not node_to_drop:
                 return
