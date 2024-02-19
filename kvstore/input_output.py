@@ -31,12 +31,6 @@ class KVStore():
     def print(self):
         print(self._store)
 
-# {
-#     "K": [
-#         (1, "v")
-#         (5, "v2")
-#     ]
-# }
 
 kv = KVStore()
 
