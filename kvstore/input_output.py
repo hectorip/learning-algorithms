@@ -31,7 +31,6 @@ class KVStore():
     def print(self):
         print(self._store)
 
-
 kv = KVStore()
 
 while True:
